@@ -17,13 +17,13 @@ def app(request):
 
 def test_add_group(app):
         app.login(username="admin", password="secret")
-        app.create_group(Group(group_1))
+        app.create_group(group_1)
         app.logout()
 
 
 def test_add_empty_group(app):
         app.login(username="admin", password="secret")
-        app.create_group(Group(empty_group))
+        app.create_group(empty_group)
         app.logout()
 
 

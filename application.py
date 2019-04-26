@@ -24,6 +24,10 @@ class Application:
         wd = self.wd
         wd.find_element_by_link_text("group page").click()
 
+    def return_home_page(self):
+        wd = self.wd
+        wd.find_element_by_link_text("home page").click()
+
     def create_contact(self, contact):
         wd = self.wd
         # add contact
