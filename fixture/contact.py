@@ -40,3 +40,20 @@ class Contact:
         self.fill_field_contact(contact)
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.app.navigator.return_home_page()
+
+    def edit_first_contact(self,contact):
+        wd = self.app.wd
+        self.app.navigator.return_home_page()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        self.fill_field_contact(contact)
+        wd.find_element_by_name("update").click()
+        self.app.navigator.return_home_page()
+
+    def delete_first_contact(self):
+        wd = self.app.wd
+        self.app.navigator.return_home_page()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        wd.find_element_by_xpath("(//input[@name='update'])[3]").click()
+        self.app.navigator.return_home_page()

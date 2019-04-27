@@ -1,5 +1,5 @@
 
-class Contcat:
+class Contact:
 
     def __init__(self, firstname, lastname, company, address, home_phone, mobile_phone, work_phone, email):
         self.firstname=firstname
