@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import pytest
 
-from application import Application
-from group import Group
-
+from fixture.application import Application
+from model.group import Group
 
 group_1 = Group(name="group_name_1", header="group_header_1", footer="group_footer_1")
 empty_group = Group(name="", header="", footer="")
+
 
 @pytest.fixture()
 def app(request):

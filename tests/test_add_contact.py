@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 import pytest
 
-from application import Application
-from contact import Contcat
+from fixture.application import Application
+from model.contact import Contcat
 
 father = Contcat("Alex", "Rovan", "CFT", "Novosibirsk", "123321321", "12331223", "413243243", "weqwwe@sffse.ri")
 empty = Contcat("", "", "", "", "", "", "", "")
 
 
 @pytest.fixture
-def app (request):
+def app(request):
     fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
