@@ -7,7 +7,7 @@ class Contact:
 
     def create(self, contact):
         wd = self.app.wd
-        self.add_new_contact()
+        self.app.navigator.add_new_contact()
         self.fill_field_contact(contact)
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.app.navigator.return_home_page()
@@ -26,10 +26,6 @@ class Contact:
         self.click_edit()
         self.click_delete()
         self.app.navigator.return_home_page()
-
-    def add_new_contact(self):
-        wd = self.app.wd
-        wd.find_element_by_link_text("add new").click()
 
     def set_field(self, field_name, text):
         wd = self.app.wd
