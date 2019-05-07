@@ -3,9 +3,17 @@
 from model.contact import Contact
 
 contact_edit = Contact("Alex_edit", "Rovan_edit", "CFT_edit", "Novosibirsk_edit", "123321321", "12331223", "413243243", "weqwwe_edit@sffse.ri")
+contact_edit_phone = Contact(mobile_phone="88005553535")
+contact_edit_email = Contact(email="new_email@mail.ru")
 
 
 def test_edit_first_contact(app):
-    app.session.login("admin", "secret")
     app.contact.edit_first_contact(contact_edit)
-    app.session.logout()
+
+
+def test_edit_phone_first_contact(app):
+    app.contact.edit_first_contact(contact_edit_phone)
+
+
+def test_edit_email_first_contact(app):
+    app.contact.edit_first_contact(contact_edit_email)

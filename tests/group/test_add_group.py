@@ -6,15 +6,12 @@ empty_group = Group(name="", header="", footer="")
 
 
 def test_add_group(app):
-    app.session.login(username="admin", password="secret")
     app.group.create(group_1)
-    app.session.logout()
 
 
 def test_add_empty_group(app):
-    app.session.login(username="admin", password="secret")
     app.group.create(empty_group)
-    app.session.logout()
+
 
 
 
