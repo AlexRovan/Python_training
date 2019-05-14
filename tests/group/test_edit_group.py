@@ -12,25 +12,25 @@ def test_edit_first_group(app):
     old_groups = app.group.get_groups_list()
     group_edit.id = old_groups[0].id
     app.group.edit_first_group(group_edit)
+    assert len(old_groups) == app.group.count()
     new_groups = app.group.get_groups_list()
-    assert len(old_groups) == len(new_groups)
     old_groups[0] = group_edit
     assert sorted(new_groups, key=Group.id_or_max) == sorted(old_groups, key=Group.id_or_max)
 
 
-def test_edit_name_first_group(app):
-    if app.group.count() == 0:
-        app.group.create(empty_group)
-    old_groups = app.group.get_groups_list()
-    app.group.edit_first_group(group_edit_name)
-    new_groups = app.group.get_groups_list()
-    assert len(old_groups) == len(new_groups)
+#def test_edit_name_first_group(app):
+#    if app.group.count() == 0:
+#        app.group.create(empty_group)
+#    old_groups = app.group.get_groups_list()
+#    app.group.edit_first_group(group_edit_name)
+#    new_groups = app.group.get_groups_list()
+#    assert len(old_groups) == len(new_groups)
 
 
-def test_edit_header_first_group(app):
-    if app.group.count() == 0:
-        app.group.create(empty_group)
-    old_groups = app.group.get_groups_list()
-    app.group.edit_first_group(group_edit_header)
-    new_groups = app.group.get_groups_list()
-    assert len(old_groups) == len(new_groups)
+#def test_edit_header_first_group(app):
+#    if app.group.count() == 0:
+#        app.group.create(empty_group)
+#    old_groups = app.group.get_groups_list()
+#    app.group.edit_first_group(group_edit_header)
+#    new_groups = app.group.get_groups_list()
+#    assert len(old_groups) == len(new_groups)

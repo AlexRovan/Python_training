@@ -9,17 +9,18 @@ empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_p
 def test_add_contact(app):
     old_contacts=app.contact.get_contacts_list()
     app.contact.create(father)
-    new_contacts=app.contact.get_contacts_list()
-    assert len(old_contacts)+1 == len(new_contacts)
+    assert len(old_contacts)+1 == app.contact.count()
     old_contacts.append(father)
+    new_contacts = app.contact.get_contacts_list()
     assert sorted(old_contacts,key = Contact.id_or_max) == sorted(new_contacts,key=Contact.id_or_max)
+
 
 def test_add_empty_contact(app):
     old_contacts = app.contact.get_contacts_list()
     app.contact.create(empty)
-    new_contacts=app.contact.get_contacts_list()
-    assert len(old_contacts)+1 == len(new_contacts)
+    assert len(old_contacts)+1 == app.contact.count()
     old_contacts.append(empty)
+    new_contacts = app.contact.get_contacts_list()
     assert sorted(old_contacts,key = Contact.id_or_max) == sorted(new_contacts,key=Contact.id_or_max)
 
 
