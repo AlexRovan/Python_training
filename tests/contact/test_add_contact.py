@@ -2,8 +2,8 @@
 
 from model.contact import Contact
 
-father = Contact("Alex", "Rovan", "CFT", "Novosibirsk", "123321321", "12331223", "413243243", "weqwwe@sffse.ri")
-empty = Contact("", "", "", "", "", "", "", "")
+father = Contact(firstname= "Alex",lastname= "Rovan",company= "CFT",address= "Novosibirsk",home= "123321321",mobile_phone= "12331223",work_phone= "413243243",email="weqwwe@sffse.ri")
+empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email="")
 
 
 def test_add_contact(app):
@@ -11,14 +11,16 @@ def test_add_contact(app):
     app.contact.create(father)
     new_contacts=app.contact.get_contacts_list()
     assert len(old_contacts)+1 == len(new_contacts)
-
+    old_contacts.append(father)
+    assert sorted(old_contacts,key = Contact.id_or_max) == sorted(new_contacts,key=Contact.id_or_max)
 
 def test_add_empty_contact(app):
     old_contacts = app.contact.get_contacts_list()
     app.contact.create(empty)
     new_contacts=app.contact.get_contacts_list()
     assert len(old_contacts)+1 == len(new_contacts)
-
+    old_contacts.append(empty)
+    assert sorted(old_contacts,key = Contact.id_or_max) == sorted(new_contacts,key=Contact.id_or_max)
 
 
 

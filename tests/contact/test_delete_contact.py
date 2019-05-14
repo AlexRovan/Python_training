@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
 
-empty = Contact("", "", "", "", "", "", "", "")
+empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email="")
 
 
 def test_delete_first_contact(app):

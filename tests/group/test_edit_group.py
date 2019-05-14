@@ -6,14 +6,17 @@ group_edit_name = Group(name="group_edit_only_name_1")
 group_edit_header = Group(header="group_edit_only_header_1")
 
 
-
 def test_edit_first_group(app):
     if app.group.count() == 0:
         app.group.create(empty_group)
     old_groups = app.group.get_groups_list()
+    group_edit.id = old_groups[0].id
     app.group.edit_first_group(group_edit)
     new_groups = app.group.get_groups_list()
     assert len(old_groups) == len(new_groups)
+    old_groups[0] = group_edit
+    assert sorted(new_groups, key=Group.id_or_max) == sorted(old_groups, key=Group.id_or_max)
+
 
 def test_edit_name_first_group(app):
     if app.group.count() == 0:
