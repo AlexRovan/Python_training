@@ -12,3 +12,8 @@ class Contact:
         self.work_phone = work_phone
         self.email = email
 
+    def __repr__(self):
+        return "Contact: %s %s %s %s " % (self.id,self.firstname,self.lastname,self.address)
+
+    def __eq__(self, other):
+        return self.firstname == other.firstname and self.lastname == other.lastname and self.address == other.address and self.id == other.id

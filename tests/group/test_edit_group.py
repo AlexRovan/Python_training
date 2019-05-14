@@ -8,26 +8,26 @@ group_edit_header = Group(header="group_edit_only_header_1")
 
 
 def test_edit_first_group(app):
-    old_groups = app.group.get_groups_list()
     if app.group.count() == 0:
         app.group.create(empty_group)
+    old_groups = app.group.get_groups_list()
     app.group.edit_first_group(group_edit)
     new_groups = app.group.get_groups_list()
     assert len(old_groups) == len(new_groups)
 
 def test_edit_name_first_group(app):
-    old_groups = app.group.get_groups_list()
     if app.group.count() == 0:
         app.group.create(empty_group)
+    old_groups = app.group.get_groups_list()
     app.group.edit_first_group(group_edit_name)
     new_groups = app.group.get_groups_list()
     assert len(old_groups) == len(new_groups)
 
 
 def test_edit_header_first_group(app):
-    old_groups = app.group.get_groups_list()
     if app.group.count() == 0:
         app.group.create(empty_group)
+    old_groups = app.group.get_groups_list()
     app.group.edit_first_group(group_edit_header)
     new_groups = app.group.get_groups_list()
     assert len(old_groups) == len(new_groups)
