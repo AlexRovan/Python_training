@@ -87,7 +87,7 @@ class ContactHelper:
     def get_contacts_list(self):
         if self.contact_cache is None:
             wd = self.app.wd
-            self.app.navigator.return_home_page
+            self.app.navigator.return_home_page()
             contact_cache = []
             for row in wd.find_elements_by_xpath("//tr[@name=\"entry\"]"):
                 id = row.find_element_by_name("selected[]").get_attribute("id")
@@ -95,5 +95,5 @@ class ContactHelper:
                 firstname = cells[2].text
                 lastname = cells[1].text
                 contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname))
-        return contact_cache
+        return list(contact_cache)
 

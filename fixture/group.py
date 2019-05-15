@@ -81,4 +81,4 @@ class GroupHelper:
                 text = el.text
                 id = el.find_element_by_name("selected[]").get_attribute("value")
                 group_cache.append(Group(name=text,id = id))
-        return group_cache
+        return list(group_cache)
