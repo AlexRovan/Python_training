@@ -17,21 +17,27 @@ class ContactHelper:
         self.app.navigator.return_home_page()
         self.contact_cache = None
 
-    def edit_first_contact(self,contact):
+    def edit_contact_by_index(self,contact,index):
         self.app.navigator.return_home_page()
-        self.select_first_contact()
-        self.click_edit()
+        self.click_edit_by_index(index)
         self.fill_field_contact(contact)
         self.click_update()
         self.app.navigator.return_home_page()
         self.contact_cache = None
 
-    def delete_first_contact(self):
+    def delete_contact_by_index(self,index):
         self.app.navigator.return_home_page()
-        self.select_first_contact()
-        self.click_edit()
+        self.select_contact_by_index(index)
         self.click_delete()
         self.app.navigator.return_home_page()
+        self.contact_cache = None
+
+    def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+        self.contact_cache = None
+
+    def edit_first_contact(self, contact):
+        self.edit_contact_by_index(contact, 0)
         self.contact_cache = None
 
     def set_field(self, field_name, text):
@@ -56,9 +62,13 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
 
-    def click_edit(self):
+    def select_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
+
+    def click_edit_by_index(self,index):
+        wd = self.app.wd
+        wd.find_elements_by_css_selector("img[alt=\"Edit\"]")[index].click()
 
     def click_update(self):
         wd = self.app.wd
@@ -66,7 +76,8 @@ class ContactHelper:
 
     def click_delete(self):
         wd = self.app.wd
-        wd.find_element_by_xpath("(//input[@name='update'])[3]").click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
 
     def count(self):
         wd = self.app.wd
@@ -78,7 +89,7 @@ class ContactHelper:
             wd = self.app.wd
             self.app.navigator.return_home_page
             contact_cache = []
-            for row in  wd.find_elements_by_xpath("//tr[@name=\"entry\"]"):
+            for row in wd.find_elements_by_xpath("//tr[@name=\"entry\"]"):
                 id = row.find_element_by_name("selected[]").get_attribute("id")
                 cells = row.find_elements_by_css_selector("td")
                 firstname = cells[2].text
