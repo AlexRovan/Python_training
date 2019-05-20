@@ -68,7 +68,7 @@ class ContactHelper:
 
     def click_edit_by_index(self,index):
         wd = self.app.wd
-        wd.find_elements_by_css_selector("img[alt=\"Edit\"]")[index].click()
+        wd.find_elements_by_css_selector('img[alt="Edit"]')[index].click()
 
     def click_update(self):
         wd = self.app.wd
@@ -89,7 +89,7 @@ class ContactHelper:
             wd = self.app.wd
             self.app.navigator.return_home_page()
             contact_cache = []
-            for row in wd.find_elements_by_xpath("//tr[@name=\"entry\"]"):
+            for row in wd.find_elements_by_xpath('//tr[@name="entry"]'):
                 id = row.find_element_by_name("selected[]").get_attribute("id")
                 cells = row.find_elements_by_css_selector("td")
                 firstname = cells[2].text
