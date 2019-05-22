@@ -2,8 +2,8 @@
 
 from model.contact import Contact
 
-father = Contact(firstname= "Alex",lastname= "Rovan",company= "CFT",address= "Novosibirsk",home= "123321321",mobile_phone= "12331223",work_phone= "413243243",email="weqwwe@sffse.ri")
-empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email="")
+father = Contact(firstname= "Alex",lastname= "Rovan",company= "CFT",address= "Novosibirsk",home= "123321321",mobile_phone= "12331223",work_phone= "413243243",email_1="weqwwe@sffse.ri")
+empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email_1="")
 
 
 def test_add_contact(app):

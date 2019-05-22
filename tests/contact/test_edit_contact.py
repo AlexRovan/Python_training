@@ -3,10 +3,10 @@ from model.contact import Contact
 import random
 
 
-empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email="")
+empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email_1="")
 contact_edit = Contact(firstname="Alex_edit",lastname= "Rovan_edit",company= "CFT_edit",address= "Novosibirsk_edit",home="123321321",mobile_phone= "12331223",work_phone= "413243243",email= "weqwwe_edit@sffse.ri")
 contact_edit_phone = Contact(mobile_phone="88005553535")
-contact_edit_email = Contact(email="new_email@mail.ru")
+contact_edit_email = Contact(email_1="new_email@mail.ru")
 
 
 def test_edit_contact_by_index(app):
