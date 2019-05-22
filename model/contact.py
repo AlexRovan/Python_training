@@ -22,7 +22,7 @@ class Contact:
         self.all_phone_contact = all_phone_contact
 
     def __repr__(self):
-        return "Contact: %s %s %s" % (self.id,self.firstname,self.lastname)
+        return "Contact: %s %s %s %s %s %s" % (self.id,self.firstname,self.lastname , self.address, self.home, self.email_1)
 
     def __eq__(self, other):
         return self.firstname == other.firstname and self.lastname == other.lastname and (self.id == other.id or self.id is None or other.id is None)

@@ -56,7 +56,9 @@ class ContactHelper:
         self.set_field("home", contact.home)
         self.set_field("mobile", contact.mobile_phone)
         self.set_field("work", contact.work_phone)
-        self.set_field("email", contact.email)
+        self.set_field("email", contact.email_1)
+        self.set_field("email2", contact.email_2)
+        self.set_field("email3", contact.email_3)
 
     def select_first_contact(self):
         wd = self.app.wd
