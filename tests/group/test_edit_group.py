@@ -7,7 +7,7 @@ group_edit_name = Group(name="group_edit_only_name_1")
 group_edit_header = Group(header="group_edit_only_header_1")
 
 
-def test_edit_first_group(app):
+def test_edit_group_by_index(app):
     if app.group.count() == 0:
         app.group.create(empty_group)
     old_groups = app.group.get_groups_list()

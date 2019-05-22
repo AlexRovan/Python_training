@@ -6,7 +6,7 @@ import random
 empty_group = Group(name="", header="", footer="")
 
 
-def test_delete_first_group(app):
+def test_delete_group_by_index(app):
     if app.group.count() == 0:
         app.group.create(empty_group)
     old_groups = app.group.get_groups_list()

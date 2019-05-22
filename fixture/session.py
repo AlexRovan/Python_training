@@ -7,7 +7,6 @@ class SessionHelper:
         self.app = app
 
     def login(self, username, password):
-        self.app.navigator.open_home_page()
         wd = self.app.wd
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys(username)
@@ -38,7 +37,7 @@ class SessionHelper:
 
             self.logout()
             self.login(username, password)
-
+        self.app.open_home_page()
         self.login(username, password)
 
     def logout_ensure(self):
