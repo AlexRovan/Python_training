@@ -10,12 +10,14 @@ def random_string(prefix,maxlen = 10):
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
-testdata = [
-            Group(name=name, header=header, footer=footer)
-            for name in ["", random_string("name_",10)]
-            for header in ["", random_string("header_",20)]
-            for footer in ["", random_string("footer_",20)]
-            ]
+empty_group = Group(name="",header="",footer="")
+
+
+testdata = [empty_group]+[
+            Group(name=random_string("name_", 10),
+                  header=random_string("header_", 20),
+                  footer=random_string("footer_", 20))
+            for i in range(5)]
 
 
 @pytest.mark.parametrize("group",testdata, ids=[repr(x) for x in testdata])
