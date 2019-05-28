@@ -2,8 +2,7 @@
 from model.contact import Contact
 import random
 import time
-
-empty = Contact(firstname="",lastname= "",company="",address="",home="",mobile_phone="",work_phone="", email_1="")
+from data.contact import empty
 
 
 def test_delete_contact_by_index(app):

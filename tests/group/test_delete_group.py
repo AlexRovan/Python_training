@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
-from model.group import Group
 import random
-
-
-empty_group = Group(name="", header="", footer="")
-
+from data.group import empty_group
 
 def test_delete_group_by_index(app):
     if app.group.count() == 0:
