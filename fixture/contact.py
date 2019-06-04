@@ -25,9 +25,24 @@ class ContactHelper:
         self.app.navigator.return_home_page()
         self.contact_cache = None
 
+    def edit_contact_by_id(self, contact, id):
+        self.app.navigator.return_home_page()
+        self.click_edit_by_id(id)
+        self.fill_field_contact(contact)
+        self.click_update()
+        self.app.navigator.return_home_page()
+        self.contact_cache = None
+
     def delete_contact_by_index(self,index):
         self.app.navigator.return_home_page()
         self.select_contact_by_index(index)
+        self.click_delete()
+        self.app.navigator.return_home_page()
+        self.contact_cache = None
+
+    def delete_contact_by_id(self, id):
+        self.app.navigator.return_home_page()
+        self.select_contact_by_id(id)
         self.click_delete()
         self.app.navigator.return_home_page()
         self.contact_cache = None
@@ -68,9 +83,17 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements_by_name("selected[]")[index].click()
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     def click_edit_by_index(self,index):
         wd = self.app.wd
         wd.find_elements_by_css_selector('img[alt="Edit"]')[index].click()
+
+    def click_edit_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id).click()
 
     def click_view_by_index(self,index):
         wd = self.app.wd

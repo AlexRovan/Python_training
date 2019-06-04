@@ -5,6 +5,7 @@ import jsonpickle
 import os.path
 import importlib
 from fixture.application import Application
+from fixture.db import DB_fixture
 
 fixture = None
 target = None
@@ -16,17 +17,25 @@ def app(request):
     global target
 
     browser = request.config.getoption("--browser")
-    if target is None:
-        config_path =os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption("--target"))
-        with open(config_path) as configfile:
-            target = json.load(configfile)
-
+    target = load_config(request.config.getoption("--target"))
     if fixture is None or not fixture.is_valid():
-        fixture = Application(browser,target["baseUrl"])
+        fixture = Application(browser,target["web"]["baseUrl"])
 
-    fixture.session.login_ensure(target["username"], target["password"])
+    fixture.session.login_ensure(target["web"]["username"], target["web"]["password"])
     return fixture
 
+@pytest.fixture(scope= "session")
+def db (request):
+    target=load_config(request.config.getoption("--target"))["db"]
+    db_fixture = DB_fixture(target["host"],target["database"],target["user"],target["password"])
+    def fin():
+        db_fixture.destroy()
+    request.addfinalizer(fin)
+    return db_fixture
+
+@pytest.fixture()
+def check_ui(request):
+    return request.config.getoption("--check_ui")
 
 @pytest.fixture(scope = "session",autouse = True)
 def stop(request):
@@ -36,6 +45,14 @@ def stop(request):
         fixture.destroy()
 
     request.addfinalizer(fin)
+
+def load_config(file):
+    global target
+    if target is None:
+        config_path =os.path.join(os.path.dirname(os.path.abspath(__file__)), file)
+        with open(config_path) as configfile:
+            target = json.load(configfile)
+    return target
 
 def pytest_generate_tests(metafunc):
     for fixture in metafunc.fixturenames:
@@ -55,3 +72,4 @@ def load_from_json(name):
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="firefox")
     parser.addoption("--target", action="store", default="target.json")
+    parser.addoption("--check_ui", action="store_true")
