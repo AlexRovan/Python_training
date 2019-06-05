@@ -5,17 +5,19 @@ import random
 bad_symbols = "() -"
 
 
-def test_compare_contact_edit_and_home(app):
+def test_compare_contact_edit_and_home(app,db):
 
-    index = random.randrange(app.contact.count())
-    contact_on_home_page = app.contact.get_contacts_list()[index]
-    contact_on_edit_page = app.contact.get_contact_list_on_edit_page(index)
+    active_contacts = db.get_contact_list()
 
-    assert contact_on_home_page.firstname == contact_on_edit_page.firstname
-    assert contact_on_home_page.lastname == contact_on_edit_page.lastname
-    assert contact_on_home_page.address == contact_on_edit_page.address
-    assert contact_on_home_page.all_phone_contact == merge_phone_like_contact_pay(contact_on_edit_page)
-    assert contact_on_home_page.all_email_contact == merge_email_like_contact_pay(contact_on_edit_page)
+    for i in range(len(active_contacts)):
+        contact_on_home_page = app.contact.get_contacts_list()[i]
+        contact_on_edit_page = app.contact.get_contact_list_on_edit_page(i)
+
+        assert contact_on_home_page.firstname == contact_on_edit_page.firstname
+        assert contact_on_home_page.lastname == contact_on_edit_page.lastname
+        assert contact_on_home_page.address == contact_on_edit_page.address
+        assert contact_on_home_page.all_phone_contact == merge_phone_like_contact_pay(contact_on_edit_page)
+        assert contact_on_home_page.all_email_contact == merge_email_like_contact_pay(contact_on_edit_page)
 
 
 def test_contact_phone_view(app):
