@@ -2,7 +2,6 @@ from pony.orm import *
 from model.group import Group
 from model.contact import Contact
 from datetime import datetime
-from pymysql.converters import decoders
 
 
 class ORM_fixture:
@@ -27,7 +26,15 @@ class ORM_fixture:
         id = PrimaryKey(int, column='id')
         firstname = Optional(str, column='firstname')
         lastname = Optional(str, column='lastname')
+        address = Optional(str, column='address')
+        home = Optional(str, column='home')
+        mobile_phone = Optional(str, column='mobile')
+        work_phone = Optional(str, column='work')
+        second_phone = Optional(str, column='phone2')
         deprecated = Optional(datetime, column= 'deprecated')
+        email = Optional(str, column='email')
+        email2 = Optional(str, column='email2')
+        email3 = Optional(str, column='email3')
         groups = Set(lambda: ORM_fixture.ORM_Group, table='address_in_groups',column='group_id',reverse='contacts',lazy=True)
 
     def convert_group(self,groups):
@@ -37,7 +44,18 @@ class ORM_fixture:
 
     def convert_contact(self,contacts):
         def convert(contact):
-            return Contact(id=str(contact.id),firstname =contact.firstname,lastname = contact.lastname)
+            return Contact(id=str(contact.id),
+                           firstname =contact.firstname,
+                           lastname = contact.lastname,
+                           address=contact.address,
+                           home= contact.home,
+                           work_phone= contact.work_phone,
+                           mobile_phone=contact.mobile_phone,
+                           second_phone=contact.second_phone,
+                           email_1=contact.email,
+                           email_2=contact.email2,
+                           email_3=contact.email3)
+
         return list(map(convert,contacts))
 
     @db_session

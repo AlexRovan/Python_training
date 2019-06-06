@@ -1,5 +1,6 @@
 import re
 import random
+from model.contact import Contact
 
 
 bad_symbols = "() -"
@@ -7,17 +8,18 @@ bad_symbols = "() -"
 
 def test_compare_contact_edit_and_home(app,db):
 
-    active_contacts = db.get_contact_list()
+    active_contacts_bd = sorted(db.get_contact_list(), key=Contact.id_or_max)
+    all_contact_on_home_page =  sorted( app.contact.get_contacts_list(), key=Contact.id_or_max)
 
-    for i in range(len(active_contacts)):
-        contact_on_home_page = app.contact.get_contacts_list()[i]
-        contact_on_edit_page = app.contact.get_contact_list_on_edit_page(i)
+    for i in range(len(all_contact_on_home_page)):
+        contact_on_home_page = all_contact_on_home_page[i]
+        contact_on_db = active_contacts_bd[i]
 
-        assert contact_on_home_page.firstname == contact_on_edit_page.firstname
-        assert contact_on_home_page.lastname == contact_on_edit_page.lastname
-        assert contact_on_home_page.address == contact_on_edit_page.address
-        assert contact_on_home_page.all_phone_contact == merge_phone_like_contact_pay(contact_on_edit_page)
-        assert contact_on_home_page.all_email_contact == merge_email_like_contact_pay(contact_on_edit_page)
+        assert contact_on_home_page.firstname == contact_on_db.firstname
+        assert contact_on_home_page.lastname == contact_on_db.lastname
+        assert contact_on_home_page.address == contact_on_db.address
+        assert contact_on_home_page.all_phone_contact == merge_phone_like_contact_pay(contact_on_db)
+        assert contact_on_home_page.all_email_contact == merge_email_like_contact_pay(contact_on_db)
 
 
 def test_contact_phone_view(app):
