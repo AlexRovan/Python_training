@@ -1,5 +1,6 @@
 import re
 from model.contact import Contact
+from selenium.webdriver.support.ui import Select
 
 
 class ContactHelper:
@@ -85,7 +86,8 @@ class ContactHelper:
 
     def select_contact_by_id(self, id):
         wd = self.app.wd
-        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        wd.find_element_by_css_selector("td.center input[value='%s']" % id).click()
+
 
     def click_edit_by_index(self,index):
         wd = self.app.wd
@@ -107,6 +109,32 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
+
+    def add_contact_to_group_list(self,contact,group):
+        wd = self.app.wd
+        self.select_contact_by_id(contact.id)
+        wd.find_element_by_css_selector("select[name='to_group']").click()
+        wd.find_element_by_css_selector("div.right option[value='%s']" % group.id).click()
+        wd.find_element_by_css_selector("input[value='Add to']").click()
+        self.app.navigator.return_home_page()
+
+    def add_contact_del_group_list(self,contact,group):
+        wd = self.app.wd
+        self.select_filter_group(group)
+        self.select_contact_by_id(contact.id)
+        wd.find_element_by_css_selector("input[name='remove']").click()
+        self.app.navigator.return_home_page()
+        self.select_filter_all_group()
+
+    def select_filter_group(self,group):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("select[name='group']").click()
+        wd.find_element_by_css_selector("form#right option[value='%s']" % group.id).click()
+
+    def select_filter_all_group(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("select[name='group']").click()
+        wd.find_element_by_css_selector("form#right option[value='[none]']").click()
 
     def count(self):
         wd = self.app.wd

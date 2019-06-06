@@ -20,6 +20,7 @@ class ORM_fixture:
         name = Optional(str,column ='group_name')
         header = Optional(str,column ='group_header')
         footer = Optional(str,column ='group_footer')
+        contacts = Set(lambda : ORM_fixture.ORM_Contact, table='address_in_groups',column='id', reverse='groups',lazy=True)
 
     class ORM_Contact(db.Entity):
         _table_ = 'addressbook'
@@ -27,6 +28,7 @@ class ORM_fixture:
         firstname = Optional(str, column='firstname')
         lastname = Optional(str, column='lastname')
         deprecated = Optional(datetime, column= 'deprecated')
+        groups = Set(lambda: ORM_fixture.ORM_Group, table='address_in_groups',column='group_id',reverse='contacts',lazy=True)
 
     def convert_group(self,groups):
         def convert(group):
@@ -40,9 +42,18 @@ class ORM_fixture:
 
     @db_session
     def get_contact_list(self):
-       #return list(select(c for c in ORM_fixture.ORM_Contact if c.deprecated is None))
         return self.convert_contact(select(c for c in ORM_fixture.ORM_Contact if c.deprecated is None))
 
     @db_session
     def get_group_list(self):
         return self.convert_group(select(g for g in ORM_fixture.ORM_Group))
+
+    @db_session
+    def get_contact_in_group(self, group):
+        orm_group = list(select(g for g in ORM_fixture.ORM_Group if g.id == group.id))[0]
+        return self.convert_contact(orm_group.contacts)
+
+    @db_session
+    def get_contact_in_not_group(self, group):
+        orm_group = list(select(g for g in ORM_fixture.ORM_Group if g.id == group.id))[0]
+        return self.convert_contact(select(c for c in ORM_fixture.ORM_Contact if c.deprecated is None and orm_group not in c.groups ))
