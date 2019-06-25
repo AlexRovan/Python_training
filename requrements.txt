@@ -3,5 +3,4 @@ selenium
 jsonpickle
 pony
 pytest_bdd
-getopt
 pymysql
