@@ -1,6 +1,8 @@
-pytest
+pytest==4.6.3
 selenium
 jsonpickle
 pony
 pytest_bdd
 pymysql
+lxml-4.3.4-cp37-cp37m-win_amd64.whl
+allure-pytest

@@ -1,0 +1,321 @@
+[ {
+  "uid" : "e1bcc10131a58974",
+  "name" : "test_edit_contact_by_index[Contact: None     ]",
+  "time" : {
+    "start" : 1561565588748,
+    "stop" : 1561565591883,
+    "duration" : 3135
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "99c88c265b4db4a2",
+  "name" : "test_edit_group_by_index[Group: None name_t header_Lx3jNyGTqHq0m08r6u footer_AqvVBjrJyNe1JAFr]",
+  "time" : {
+    "start" : 1561565632779,
+    "stop" : 1561565634814,
+    "duration" : 2035
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b035684c0a211d9a",
+  "name" : "test_add_contact[Contact: None firstname_lfWAVaFkvW lastname_JLF97ZODY0GxYA address_2FZ home_xdFGvSZT email_1_9EjPQJ3x]",
+  "time" : {
+    "start" : 1561565554971,
+    "stop" : 1561565558620,
+    "duration" : 3649
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "96ca5be45ea573ba",
+  "name" : "test_delete_contact_by_index",
+  "time" : {
+    "start" : 1561565586852,
+    "stop" : 1561565588597,
+    "duration" : 1745
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e612784f4a96411b",
+  "name" : "test_compare_contact_edit_and_home",
+  "time" : {
+    "start" : 1561565578774,
+    "stop" : 1561565581624,
+    "duration" : 2850
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "75dd0788028e94e0",
+  "name" : "test_add_group[Group: None name_c header_nsXxj8PBv2Q footer_Uputh3E00gUZaM27ZA]",
+  "time" : {
+    "start" : 1561565618692,
+    "stop" : 1561565620398,
+    "duration" : 1706
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "67852976294736e2",
+  "name" : "test_contact_add_group",
+  "time" : {
+    "start" : 1561565574977,
+    "stop" : 1561565578127,
+    "duration" : 3150
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1a8af6ac84f9ff64",
+  "name" : "test_edit_contact_by_index[Contact: None firstname_9Y5WXlFRY8 lastname_YzCgDWpYL0uz71JIQy address_kGe home_nNkeir email_1_FyWFlrSM]",
+  "time" : {
+    "start" : 1561565592679,
+    "stop" : 1561565596320,
+    "duration" : 3641
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e18f29feb9a200f2",
+  "name" : "test_edit_group_by_index[Group: None name_u4yhzE header_3d8anFC footer_OXUfmYycOIN472C]",
+  "time" : {
+    "start" : 1561565628418,
+    "stop" : 1561565630367,
+    "duration" : 1949
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f21257060511d4e9",
+  "name" : "test_edit_contact_by_index[Contact: None firstname_2HjId8VKyfU lastname_EP3AtZ4H6eR2E3SFcrPAd3UsZDo address_PDcENksP61BmASWLYaI home_3D email_1_Nmar]",
+  "time" : {
+    "start" : 1561565606404,
+    "stop" : 1561565610154,
+    "duration" : 3750
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6452060c046dffec",
+  "name" : "test_add_group[Group: None   ]",
+  "time" : {
+    "start" : 1561565615428,
+    "stop" : 1561565616879,
+    "duration" : 1451
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "92a6973d047d22ac",
+  "name" : "test_edit_group_by_index[Group: None name_JEvIjH5Za header_fP1VW1i footer_P5xN9kXB]",
+  "time" : {
+    "start" : 1561565637087,
+    "stop" : 1561565639300,
+    "duration" : 2213
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a4071b0a6b2b6b47",
+  "name" : "test_edit_group_by_index[Group: None   ]",
+  "time" : {
+    "start" : 1561565626493,
+    "stop" : 1561565628281,
+    "duration" : 1788
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bf354668c0ad00e6",
+  "name" : "test_add_group[Group: None name_s header_SWjLD0ZwXrE4K23mZR footer_mIFKLiHaJ94]",
+  "time" : {
+    "start" : 1561565622169,
+    "stop" : 1561565623703,
+    "duration" : 1534
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9ec1675ee6660892",
+  "name" : "test_edit_group_by_index[Group: None name_c header_nsXxj8PBv2Q footer_Uputh3E00gUZaM27ZA]",
+  "time" : {
+    "start" : 1561565630496,
+    "stop" : 1561565632616,
+    "duration" : 2120
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "56ec7592ab54c086",
+  "name" : "test_add_contact[Contact: None firstname_2HjId8VKyfU lastname_EP3AtZ4H6eR2E3SFcrPAd3UsZDo address_PDcENksP61BmASWLYaI home_3D email_1_Nmar]",
+  "time" : {
+    "start" : 1561565563630,
+    "stop" : 1561565567155,
+    "duration" : 3525
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fc87a83dd41ab1ff",
+  "name" : "test_add_contact[Contact: None     ]",
+  "time" : {
+    "start" : 1561565541774,
+    "stop" : 1561565549783,
+    "duration" : 8009
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dcf7dde2db965a9",
+  "name" : "test_add_group[Group: None name_u4yhzE header_3d8anFC footer_OXUfmYycOIN472C]",
+  "time" : {
+    "start" : 1561565617004,
+    "stop" : 1561565618548,
+    "duration" : 1544
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "df8feb4e0a32a647",
+  "name" : "test_add_group[Group: None name_JEvIjH5Za header_fP1VW1i footer_P5xN9kXB]",
+  "time" : {
+    "start" : 1561565623974,
+    "stop" : 1561565625503,
+    "duration" : 1529
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "54daab0c5950abf3",
+  "name" : "test_add_group[Group: None name_t header_Lx3jNyGTqHq0m08r6u footer_AqvVBjrJyNe1JAFr]",
+  "time" : {
+    "start" : 1561565620529,
+    "stop" : 1561565621994,
+    "duration" : 1465
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f60d739aedb7989d",
+  "name" : "test_edit_contact_by_index[Contact: None firstname_gsi1sucrGr lastname_AeXmsWVUbthtMsoKVt7o address_H5H7td6inh345yqJkLvAzg0 home_Hu email_1_Rvp3BUD]",
+  "time" : {
+    "start" : 1561565610990,
+    "stop" : 1561565614664,
+    "duration" : 3674
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6d88fd54fa0bfef4",
+  "name" : "test_add_contact[Contact: None firstname_9Y5WXlFRY8 lastname_YzCgDWpYL0uz71JIQy address_kGe home_nNkeir email_1_FyWFlrSM]",
+  "time" : {
+    "start" : 1561565550515,
+    "stop" : 1561565554254,
+    "duration" : 3739
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "980396c7a20dd649",
+  "name" : "test_delete_group_by_index",
+  "time" : {
+    "start" : 1561565625631,
+    "stop" : 1561565626206,
+    "duration" : 575
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1e12314c6e5a515f",
+  "name" : "test_edit_group_by_index[Group: None name_s header_SWjLD0ZwXrE4K23mZR footer_mIFKLiHaJ94]",
+  "time" : {
+    "start" : 1561565634949,
+    "stop" : 1561565636952,
+    "duration" : 2003
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bf81785d61d670bf",
+  "name" : "test_contact_phone_view",
+  "time" : {
+    "start" : 1561565582433,
+    "stop" : 1561565586694,
+    "duration" : 4261
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "b131421d72d1d559",
+  "name" : "test_contact_list",
+  "time" : {
+    "start" : 1561565519709,
+    "stop" : 1561565519709,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "6d0c7b9a950ef72b",
+  "name" : "test_group_list",
+  "time" : {
+    "start" : 1561565515258,
+    "stop" : 1561565515258,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "23c39b925e478401",
+  "name" : "test_contact_add_group",
+  "time" : {
+    "start" : 1561565572680,
+    "stop" : 1561565574170,
+    "duration" : 1490
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "963a23a591ff5a14",
+  "name" : "test_edit_contact_by_index[Contact: None firstname_lfWAVaFkvW lastname_JLF97ZODY0GxYA address_2FZ home_xdFGvSZT email_1_9EjPQJ3x]",
+  "time" : {
+    "start" : 1561565597131,
+    "stop" : 1561565600863,
+    "duration" : 3732
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ee8b5f0786e96e33",
+  "name" : "test_add_contact[Contact: None firstname_TuyHC lastname_zbNz9qvfioc0q address_Z1LMpt6mGU0Mm5o8 home_vCngQ email_1_dr1TS1rsW]",
+  "time" : {
+    "start" : 1561565559556,
+    "stop" : 1561565562922,
+    "duration" : 3366
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3456dc7e107eda93",
+  "name" : "test_edit_contact_by_index[Contact: None firstname_TuyHC lastname_zbNz9qvfioc0q address_Z1LMpt6mGU0Mm5o8 home_vCngQ email_1_dr1TS1rsW]",
+  "time" : {
+    "start" : 1561565601861,
+    "stop" : 1561565605560,
+    "duration" : 3699
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "91bb4039fb3f0a78",
+  "name" : "test_add_contact[Contact: None firstname_gsi1sucrGr lastname_AeXmsWVUbthtMsoKVt7o address_H5H7td6inh345yqJkLvAzg0 home_Hu email_1_Rvp3BUD]",
+  "time" : {
+    "start" : 1561565567958,
+    "stop" : 1561565571698,
+    "duration" : 3740
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
