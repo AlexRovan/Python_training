@@ -9,7 +9,7 @@ from fixture.db import DB_fixture
 from fixture.orm import ORM_fixture
 
 fixture = None
-target = None
+target = None 
 
 
 @pytest.fixture()
